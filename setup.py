@@ -11,7 +11,7 @@ setup(
     long_description='',
     packages=find_packages(),
     dependency_links = ['https://github.com/tbarbugli/sentry/zipball/master#egg=sentry-4.8.1beta'],
-    install_requires=['sentry==4.8.1beta'],
+    install_requires=['sentry>=4.8.1beta'],
     test_suite='runtests.runtests',
     license='BSD',
     include_package_data=True,
