@@ -26,6 +26,5 @@ When you are receiving 4 times the errors per period defined you are in Defcon 2
 
 Defcon 1 status will be kept for an amount of seconds you can define in the setting screen (cooldown period).
 
-At this present this plugin requires my forked version of Sentry, the install of the right
-sentry package should be handled by the setup.py correctly, in case you have issues you install it
-directly from the [github repo](https://github.com/tbarbugli/sentry).
+At this present this plugin requires my forked version of Sentry, you can grab it from [here](https://github.com/tbarbugli/sentry).
+Note that you need to run `sentry --config=config upgrade` command if you switch to this verions.
