@@ -63,23 +63,27 @@ class Defcon(Plugin):
     RESOLUTION = 5
     SAMPLES = 12
 
-    @property
-    def cool_down_period(self):
-        return self.get_option('cool_down')
+    DEFAULT_RATE = 30
+    DEFAULT_RATE_PERIOD = 'm'
+    DEFAULT_COOL_DOWN = 600
 
     @property
     def condition_rate(self):
-        return self.get_option('condition_rate')
+        return self.get_option('condition_rate', default=Defcon.DEFAULT_RATE)
 
     @property
     def condition_rate_period(self):
-        return self.get_option('condition_rate_period')
+        return self.get_option('condition_rate_period', default=Defcon.DEFAULT_RATE_PERIOD)
+
+    @property
+    def cool_down_period(self):
+        return self.get_option('cool_down', default=Defcon.DEFAULT_COOL_DOWN)
 
     def get_form_initial(self, project=None):
         return {
-            'condition_rate': 30,
-            'condition_rate_period': 'm',
-            'cool_down_period': 600,
+            'condition_rate': Defcon.DEFAULT_RATE,
+            'condition_rate_period': Defcon.DEFAULT_RATE_PERIOD,
+            'cool_down_period': Defcon.DEFAULT_COOL_DOWN,
         }
 
     def get_filters(self, project=None, **kwargs):
