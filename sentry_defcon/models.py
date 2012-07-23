@@ -182,7 +182,7 @@ def notify_defcon_one(sender, **kwargs):
     msg = EmailMultiAlternatives(
         'Defcon 1 reached!',
         'We reached DEFCON 1, error rate reached errors per seconds!',
-        settings.SERVER_EMAIL,
+        settings.SENTRY_SERVER_EMAIL,
         emails
     )
     msg.send(fail_silently=True)
